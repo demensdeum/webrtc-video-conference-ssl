@@ -7,11 +7,11 @@ SSL initialization code for avoup's WebRT Video Conference
 * install mkcert root CA on all related devices
 * trust mkcert root CA on all related devices
 * change "options" var in server.js code for certs files
-* change "port"in server.js  
+* change "port" in server.js  
 * npm install  
 * npm start  
 
-Check mkcert installation guides in its repository + you can find releated videos on YouTube.   
+Check mkcert installation guides in its repository + you can find related videos on YouTube.   
   
 # Original README  
 
