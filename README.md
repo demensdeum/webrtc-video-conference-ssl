@@ -1,3 +1,20 @@
+# WebRT Video Conference + SSL Fork  
+
+SSL initialization code for avoup's WebRT Video Conference  
+
+* make certs with https://github.com/FiloSottile/mkcert  
+* put certs in certs directory  
+* install mkcert root CA on all related devices
+* trust mkcert root CA on all related devices
+* change "options" var in server.js code for certs files
+* change "port"in server.js  
+* npm install  
+* npm start  
+
+Check mkcert installation guides in its repository + you can find releated videos on YouTube.   
+  
+# Original README  
+
 <p align="center">
   <img src="https://lh3.googleusercontent.com/J68ffoWBYBsMDTpuQbu_AiOn8SpAi4AycmZ4xblZluSPDWdPVqZFREbxucrfCMq-ciFOPQ-6bNn3ju7pOw=w480-h492-rw-no">
 </p>

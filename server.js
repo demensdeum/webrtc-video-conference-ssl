@@ -2,8 +2,10 @@ const path = require('path');
 const express = require('express');
 const app = express();
 const socketIO = require('socket.io');
+const fs = require('fs');
+const https = require('https');
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 5000;
 const env = process.env.NODE_ENV || 'development';
 
 // Redirect to https
@@ -17,9 +19,14 @@ app.get('*', (req, res, next) => {
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
-const server = require('http').createServer(app);
-server.listen(port, () => {
-    console.log(`listening on port ${port}`);
+const options = {
+    key: fs.readFileSync('certs/192.168.0.105-key.pem'),
+    cert: fs.readFileSync('certs/192.168.0.105.pem'),
+    minVersion: 'TLSv1.3'
+};
+
+server = https.createServer(options, app).listen(port, () => {
+    console.log(`Server listening on port ${port}`);
 });
 
 /**
